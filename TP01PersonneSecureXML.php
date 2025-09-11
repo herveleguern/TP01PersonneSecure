@@ -9,19 +9,12 @@ class Personne
     private $nom;
     private $prenom;
     private $login;
-    private static $nbInstances = 0;    //nb instances
 
     public function __construct($nom, $prenom, $login)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->login = $login;
-        self::$nbInstances++;
-    }
-
-    static function getNbInstances()
-    {
-        return self::$nbInstances;
     }
 
     public function __toString()
@@ -52,11 +45,11 @@ class PersonneSecure extends Personne
 //main
 $p1 = new Personne('Arsac', 'Jacques', 'jarsac');
 echo $p1, "<br>";
-echo Personne::getNbInstances(), "<br>";
+
 
 
 $p2 = new PersonneSecure('Kador', 'Florent', 'fkador', 'password');
 echo $p2, "<br>";
-echo Personne::getNbInstances(), "<br>";
+
 
 ?>
