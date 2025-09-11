@@ -4,7 +4,7 @@ interface XMLable{
     public function toXML();
 }
 
-class Personne 
+class Personne implements XMLable
 {
     private $nom;
     private $prenom;
@@ -22,7 +22,9 @@ class Personne
         return $this->nom . " " . $this->prenom . "   " . $this->login;
     }
 
-    
+    public function toXML(){
+        //A CODER
+    }
 }
 
 class PersonneSecure extends Personne
@@ -44,12 +46,12 @@ class PersonneSecure extends Personne
 
 //main
 $p1 = new Personne('Arsac', 'Jacques', 'jarsac');
-echo $p1, "<br>";
+echo $p1, "\n";
 
 
 
 $p2 = new PersonneSecure('Kador', 'Florent', 'fkador', 'password');
-echo $p2, "<br>";
+echo $p2, "\n";
 
 
 ?>
